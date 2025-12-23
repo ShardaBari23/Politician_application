@@ -1,0 +1,209 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f1f5f9;
+}
+
+/* HEADER */
+.header {
+  background: linear-gradient(135deg, #0f766e, #14b8a6);
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header span {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.logout {
+  background: #ef4444;
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* TABS */
+.tabs {
+  display: flex;
+  gap: 10px;
+  padding: 15px;
+}
+
+.tabs button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  background: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.tabs button.active {
+  background: #14b8a6;
+  color: white;
+}
+
+/* TAB */
+.tab {
+  display: none;
+  padding: 20px;
+}
+
+.tab.active {
+  display: block;
+}
+
+/* CARD */
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.card.full {
+  grid-column: span 2;
+}
+
+.card h3 {
+  margin-bottom: 12px;
+}
+
+/* INPUT */
+input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+}
+
+
+/* ================= TABLE ================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th, table td {
+  padding: 12px;
+  border-bottom: 1px solid #e2e8f0;
+  text-align: left;
+}
+
+table th {
+  background: #f8fafc;
+  font-weight: 600;
+}
+
+
+/* MINI TABLE */
+.mini-table {
+  margin-top: 20px;
+}
+
+.mini-table th {
+  background: #14b8a6;
+  color: white;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+
+/* ===== LOAD MORE BUTTON ===== */
+#loadMoreBtn {
+  background: linear-gradient(135deg, #0f766e, #14b8a6);
+  color: #ffffff;
+  border: none;
+  padding: 12px 28px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(20, 184, 166, 0.35);
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+#loadMoreBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(20, 184, 166, 0.5);
+}
+
+/* Click effect */
+#loadMoreBtn:active {
+  transform: scale(0.96);
+}
+
+/* Disabled state (jab data khatam ho jaye) */
+#loadMoreBtn:disabled {
+  background: #cbd5e1;
+  color: #64748b;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+
+
+/* ================= RESPONSIVE FIX (USER PANEL) ================= */
+
+/* ===== Tabs Mobile ===== */
+@media (max-width: 768px) {
+  .tabs {
+    flex-direction: column;
+  }
+
+  .tabs button {
+    width: 100%;
+  }
+}
+
+/* ===== Table Horizontal Scroll ===== */
+.card table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+/* ===== Analytics Grid Mobile ===== */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card.full {
+    grid-column: span 1;
+  }
+}
+
+/* ===== Chart Responsive ===== */
+canvas {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* ===== Load More Button Mobile ===== */
+@media (max-width: 768px) {
+  #loadMoreBtn {
+    width: 100%;
+    padding: 14px;
+  }
+}
