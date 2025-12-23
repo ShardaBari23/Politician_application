@@ -1,97 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>User Dashboard</title>
-  <link rel="stylesheet" href="user.css">
+  <link rel="stylesheet" href="/user.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
 
-<header class="header">
-  <div>
-    <h2>👤 User Dashboard</h2>
-    <span>Voter View • Search • Analytics</span>
-  </div>
-  <button class="logout" onclick="logout()">Logout</button>
-</header>
+  <header class="header">
+    <div>
+      <h2>👤 User Dashboard</h2>
+      <span>Voter View • Search • Analytics</span>
+    </div>
+    <button class="logout" onclick="logout()">Logout</button>
+  </header>
 
-<nav class="tabs">
-  <button class="active" onclick="openTab(event,'voters')">📋 View Voters</button>
-  <button onclick="openTab(event,'graphs')">📊 Analytics</button>
-</nav>
+  <nav class="tabs">
+    <button class="active" onclick="openTab(event,'voters')">📋 View Voters</button>
+    <button onclick="openTab(event,'graphs')">📊 Analytics</button>
+  </nav>
 
-<!-- ================= VOTERS ================= -->
-<section id="voters" class="tab active">
-  <div class="card">
-    <h3>🔍 Search Voter</h3>
-    <input type="text" id="searchInput"
-      placeholder="Search by Name / Mobile / EPIC"
-      onkeyup="searchVoter()">
-  </div>
-
-  <div class="card">
-    <h3>📄 Voter List</h3>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Gender</th>
-          <th>Age</th>
-          <th>Mobile</th>
-          <th>House</th>
-          <th>EPIC</th>
-        </tr>
-      </thead>
-      <tbody id="voterTable"></tbody>
-    </table>
-
-    <div style="text-align:center; margin-top:20px;">
-  <button id="loadMoreBtn" onclick="loadMoreVoters()">
-    Load More
-  </button>
-</div>
-  </div>
-</section>
-
-<!-- ================= ANALYTICS ================= -->
-<section id="graphs" class="tab">
-  <div class="grid">
-
+  <!-- ================= VOTERS ================= -->
+  <section id="voters" class="tab active">
     <div class="card">
-      <h3>Gender Distribution</h3>
-      <canvas id="genderChart"></canvas>
+      <h3>🔍 Search Voter</h3>
+      <input type="text" id="searchInput" placeholder="Search by Name / Mobile / EPIC" onkeyup="searchVoter()">
     </div>
 
     <div class="card">
-      <h3>Age Group Distribution</h3>
-      <canvas id="ageChart"></canvas>
-    </div>
-
-    <div class="card full">
-      <h3>Top 10 Surnames</h3>
-      <canvas id="surnameChart"></canvas>
-
-      <table class="mini-table">
+      <h3>📄 Voter List</h3>
+      <table>
         <thead>
           <tr>
-            <th>#</th>
-            <th>Surname</th>
-            <th>Total</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Age</th>
+            <th>Mobile</th>
+            <th>House</th>
+            <th>EPIC</th>
           </tr>
         </thead>
-        <tbody id="surnameTable"></tbody>
+        <tbody id="voterTable"></tbody>
       </table>
+
+      <div style="text-align:center; margin-top:20px;">
+        <button id="loadMoreBtn" onclick="loadMoreVoters()">
+          Load More
+        </button>
+      </div>
     </div>
+  </section>
 
-  </div>
-</section>
+  <!-- ================= ANALYTICS ================= -->
+  <section id="graphs" class="tab">
+    <div class="grid">
+
+      <div class="card">
+        <h3>Gender Distribution</h3>
+        <canvas id="genderChart"></canvas>
+      </div>
+
+      <div class="card">
+        <h3>Age Group Distribution</h3>
+        <canvas id="ageChart"></canvas>
+      </div>
+
+      <div class="card full">
+        <h3>Top 10 Surnames</h3>
+        <canvas id="surnameChart"></canvas>
+
+        <table class="mini-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Surname</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody id="surnameTable"></tbody>
+        </table>
+      </div>
+
+    </div>
+  </section>
 
 
 
 
 
-<script src="user.js"></script>
+  <script src="/user.js"></script>
 </body>
+
 </html>
