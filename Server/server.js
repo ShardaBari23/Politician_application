@@ -10,6 +10,10 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+// Root Route
+app.get("/", (req, res) => {
+  res.send("🚀 Politician Backend is Live!");
+});
 
 // ✅ API ROUTES FIRST
 app.use("/api/auth", authRoutes);
