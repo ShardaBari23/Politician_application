@@ -11,8 +11,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 // Root Route
+// Root Route
 app.get("/", (req, res) => {
-  res.send("🚀 Politician Backend is Live!");
+  res.sendFile(path.join(__dirname, "../Client/index.html"));
 });
 
 // ✅ API ROUTES FIRST
