@@ -44,7 +44,7 @@ function fetchVoters(reset = false) {
     btn.innerText = "Load More";
   }
 
-  fetch(`http://localhost:5000/api/voters?limit=${limit}&offset=${offset}`, {
+  fetch(`/api/voters?limit=${limit}&offset=${offset}`, {
     headers: { Authorization: "Bearer " + token }
   })
     .then(res => res.json())
@@ -65,7 +65,7 @@ function fetchSearchVoters() {
   const btn = document.getElementById("loadMoreBtn");
 
   fetch(
-    `http://localhost:5000/api/voters/search?q=${searchQuery}&limit=${limit}&offset=${offset}`,
+    `/api/voters/search?q=${searchQuery}&limit=${limit}&offset=${offset}`,
     { headers: { Authorization: "Bearer " + token } }
   )
     .then(res => res.json())
@@ -127,7 +127,7 @@ function searchVoter() {
 
 /* ===== GRAPHS ===== */
 function loadGenderGraph() {
-  fetch("http://localhost:5000/api/voters/stats/gender", {
+  fetch("/api/voters/stats/gender", {
     headers: { Authorization: token }
   })
     .then(res => res.json())
@@ -143,7 +143,7 @@ function loadGenderGraph() {
 }
 
 function loadAgeGraph() {
-  fetch("http://localhost:5000/api/voters/stats/age", {
+  fetch("/api/voters/stats/age", {
     headers: { Authorization: token }
   })
     .then(res => res.json())
@@ -159,7 +159,7 @@ function loadAgeGraph() {
 }
 
 function loadSurnameGraph() {
-  fetch("http://localhost:5000/api/voters/stats/surname", {
+  fetch("/api/voters/stats/surname", {
     headers: { Authorization: token }
   })
     .then(res => res.json())
