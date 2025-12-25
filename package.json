@@ -1,0 +1,11 @@
+{
+    "name": "election-app-root",
+    "version": "1.0.0",
+    "description": "Root package to handle Render deployment",
+    "scripts": {
+        "postinstall": "cd Server && npm install",
+        "start": "cd Server && npm start"
+    },
+    "dependencies": {},
+    "devDependencies": {}
+}
