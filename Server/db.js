@@ -1,22 +1,24 @@
-const mysql = require('mysql2');
+const mysql = require("mysql2");
+const fs = require("fs");
+const path = require("path");
 
-const db = mysql.createConnection({
+const connection = mysql.createConnection({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
   port: process.env.DB_PORT,
   ssl: {
-    rejectUnauthorized: false
+    ca: fs.readFileSync(path.join(__dirname, "ca.pem"))
   }
 });
 
-db.connect((err) => {
+connection.connect((err) => {
   if (err) {
-    console.error('DB Error:', err);
-  } else {
-    console.log('Database connected successfully');
+    console.error("❌ DB Connection Failed:", err);
+    return;
   }
+  console.log("✅ Connected to Aiven MySQL");
 });
 
-module.exports = db;
+module.exports = connection;
